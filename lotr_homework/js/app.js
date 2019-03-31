@@ -143,14 +143,18 @@ const makeBaddies = () => {
 // Chapter 5
 // ============
 const makeBuddies = () => {
+  console.log('Chapter 5')
+  $('#middle-earth').append(`<aside/>`)
 
+    for(let i = 0; i < buddies.length; i++) {
+      $('aside').append(`<ul class="buddy">${buddies[i]}</ul>`)
+    }
+};
   // 1. create an aside tag and append it to middle-earth below mordor
 
   // 2. display an unordered list of buddies in the aside
 
   // 3. give each of the buddies a class of "buddy"
-
-};
 
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 5 complete - Made the Buddies".
@@ -159,6 +163,8 @@ const makeBuddies = () => {
 // Chapter 6
 // ============
 const leaveTheShire = () => {
+
+
 
   // 1. grab the hobbits (the ul in which they reside) and move them to Rivendell
 
