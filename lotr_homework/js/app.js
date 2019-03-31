@@ -45,16 +45,16 @@ const makeMiddleEarth = () => {
   // HINT: Make a console.log for each of your functions to make sure that, when you click, the correct function is being called!
 
   // console.log("Trying to make middle earth.");
-  
-  // 1. create a section tag with an id of middle-earth
-
-  // 2. append the section to the body of the DOM.
 
   $('body').append(`<section id="middle-earth"></section>`);
  
   for(i = 0; i < lands.length; i++) {
       $(`#middle-earth`).append(`<article id="${lands[i]}"><h1>${lands[i]}</h1></article>`)
   }
+  
+  // 1. create a section tag with an id of middle-earth
+
+  // 2. append the section to the body of the DOM.
   
   // 3. use a for loop to iterate over the lands array that does the following:
         
@@ -80,19 +80,18 @@ const makeHobbits = () => {
 
   $('#The-Shire').append(`<ul/>`)
 
+  for(let i = 0; i < hobbits.length; i++) {
+    $('ul').append(`<li class="hobbits">${hobbits[i]}</li>`)
+  }
+};
+
   // 1. display an unordered list of the hobbits in the shire.
-    for(let i = 0; i < hobbits.length; i++) {
-      $('ul').append(`<li class="hobbits">${hobbits[i]}</li>`)
-    }
-  };
       
   // 2. give each hobbit a class of "hobbit"
 
   // hint: create a 'ul' outside the loop upon which to append the 'li's
 
   // hint: get 'The-Shire' by using its id
-
-
 
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 2 complete - Made the Hobbits".
@@ -101,6 +100,10 @@ const makeHobbits = () => {
 // Chapter 3
 // ============
 const keepItSecretKeepItSafe = () => {
+
+  ('<div id="the-ring"><\div>')
+
+  $('.hobbits').eq(0).append(`<div id="the-ring"></div>`)
 
   // 1. create an empty div with an id of 'the-ring'
 
