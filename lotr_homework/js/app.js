@@ -45,12 +45,6 @@ const makeMiddleEarth = () => {
   // HINT: Make a console.log for each of your functions to make sure that, when you click, the correct function is being called!
 
   // console.log("Trying to make middle earth.");
-
-  $('body').append(`<section id="middle-earth"></section>`);
- 
-  for(i = 0; i < lands.length; i++) {
-      $(`#middle-earth`).append(`<article id="${lands[i]}"><h1>${lands[i]}</h1></article>`)
-  }
   
   // 1. create a section tag with an id of middle-earth
 
@@ -66,6 +60,11 @@ const makeMiddleEarth = () => {
 
   //   3d. appends each land to the middle-earth section
 
+  $('body').append(`<section id="middle-earth"></section>`);
+ 
+  for(i = 0; i < lands.length; i++) {
+      $(`#middle-earth`).append(`<article id="${lands[i]}"><h1>${lands[i]}</h1></article>`)
+  }
 };
 
 // COMMIT YOUR WORK
@@ -78,13 +77,6 @@ const makeHobbits = () => {
 
   //console.log('Make hobbits');
 
-  $('#The-Shire').append(`<ul/>`)
-
-  for(let i = 0; i < hobbits.length; i++) {
-    $('ul').append(`<li class="hobbits">${hobbits[i]}</li>`)
-  }
-};
-
   // 1. display an unordered list of the hobbits in the shire.
       
   // 2. give each hobbit a class of "hobbit"
@@ -92,6 +84,13 @@ const makeHobbits = () => {
   // hint: create a 'ul' outside the loop upon which to append the 'li's
 
   // hint: get 'The-Shire' by using its id
+
+  $('#The-Shire').append(`<ul/>`)
+
+  for(let i = 0; i < hobbits.length; i++) {
+    $('ul').append(`<li class="hobbits">${hobbits[i]}</li>`)
+  }
+};
 
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 2 complete - Made the Hobbits".
@@ -101,10 +100,6 @@ const makeHobbits = () => {
 // ============
 const keepItSecretKeepItSafe = () => {
 
-  ('<div id="the-ring"><\div>')
-
-  $('.hobbits').eq(0).append(`<div id="the-ring"></div>`)
-
   // 1. create an empty div with an id of 'the-ring'
 
   // 2. add the ring as a child of Frodo
@@ -112,6 +107,10 @@ const keepItSecretKeepItSafe = () => {
   // hint: Frodo does not have an id, but there is a command to retrieve all elements with a certain class. This should give you an array for you to access . . .
 
   // when you think you have given Frodo the ring, check in your Elements tab
+  
+  ('<div id="the-ring"><\div>')
+
+  $('.hobbits').eq(0).append(`<div id="the-ring"></div>`)
 
 };
 
@@ -123,18 +122,18 @@ const keepItSecretKeepItSafe = () => {
 // ============
 const makeBaddies = () => {
 
-  $('#Mordor').append(`<ul/>`)
-
-  for(let i = 0; i < baddies.length; i++) {
-    $('#Mordor').append(`<li class="baddy">${baddies[i]}</li>`)
-  }
-};
   // 1. display an unordered list of baddies in Mordor
 
   // 2. give each of the baddies a class of "baddy"
 
   // 3. remember to append them to Mordor
 
+  $('#Mordor').append(`<ul/>`)
+
+  for(let i = 0; i < baddies.length; i++) {
+    $('#Mordor').append(`<li class="baddy">${baddies[i]}</li>`)
+  }
+};
 
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 4 complete - Made the Baddies"..
@@ -143,18 +142,21 @@ const makeBaddies = () => {
 // Chapter 5
 // ============
 const makeBuddies = () => {
-  console.log('Chapter 5')
-  $('#middle-earth').append(`<aside/>`)
 
-    for(let i = 0; i < buddies.length; i++) {
-      $('aside').append(`<ul class="buddy">${buddies[i]}</ul>`)
-    }
-};
   // 1. create an aside tag and append it to middle-earth below mordor
 
   // 2. display an unordered list of buddies in the aside
 
-  // 3. give each of the buddies a class of "buddy"
+  // 3. give each of the buddies a class of "buddy"  console.log('Chapter 5')
+
+  $('#middle-earth').append(`<aside/>`)
+
+  for(let i = 0; i < buddies.length; i++) {
+    $('aside').append(`<ul class="buddy">${buddies[i]}</ul>`)
+  }
+};
+
+
 
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 5 complete - Made the Buddies".
@@ -164,11 +166,15 @@ const makeBuddies = () => {
 // ============
 const leaveTheShire = () => {
 
-
-
   // 1. grab the hobbits (the ul in which they reside) and move them to Rivendell
 
   // hint: the hobbits ul is a childNode of The-Shire-- there is way to get a list of childNodes
+
+  // $('#Rivendell').append(`<ul/>`)
+
+  for(let i = 0; i < hobbits.length; i++) {
+    $('#The-Shire ul').detach().appendTo('#Rivendell');
+  }
 
 };
 
@@ -183,6 +189,8 @@ const beautifulStranger = () => {
   // 1. change the buddy 'Strider' textnode to "Aragorn"
 
   // hint: You can get a list of elements by tag name, such as 'aside'
+
+  $("Strider").replaceWith("Aragon");
 
 };
 
