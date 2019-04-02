@@ -174,8 +174,7 @@ const leaveTheShire = () => {
 
   for(let i = 0; i < hobbits.length; i++) {
     $('#The-Shire ul').detach().appendTo('#Rivendell');
-  }
-
+  };
 };
 
 // COMMIT YOUR WORK
@@ -189,9 +188,17 @@ const beautifulStranger = () => {
   // 1. change the buddy 'Strider' textnode to "Aragorn"
 
   // hint: You can get a list of elements by tag name, such as 'aside'
+ 
+  //  $("#aside.ul[3]").replaceWith(`<ul class="buddy">Aragorn</ul>`);
+ 
+  // Having trouble getting this to Work...
 
-  $("Strider").replaceWith("Aragon");
-
+  /*  for(let i = 0; i < "#aside".length; i++) {
+      if("#aside".ul[i] === 'Strider') {
+        console.log(aside.buddy[i])
+         $("buddies[i]").text("Aragorn")
+      }
+    }; */
 };
 
 // COMMIT YOUR WORK
@@ -209,6 +216,8 @@ const forgeTheFellowShip = () => {
   // 3. append the fellowship to middle-earth
 
   // 4. add the unordered lists of hobbits and buddies to 'the-fellowship'
+
+
 
 };
 
@@ -329,7 +338,7 @@ $(() => {
     hornOfGondor();
     itsDangerousToGoAlone();
     weWantsIt();
-    thereAndBackAgain();
+    thereAndBackAgain();  
   });
 
-});
+}); 
