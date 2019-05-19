@@ -23,7 +23,7 @@ const buddies = [
 const baddies = [
   "Sauron",
   "Saruman",
-  "The Uruk-hai",
+  "The Uruk-Hai",
   "Orcs"
 ];
 
@@ -237,10 +237,12 @@ const theBalrog = () => {
   // 3. in the style.css file, add a css rule to make elements of the class "the-white" have a white background and a grey border
 
   $('.buddy').each(function(){
-    if(this.innerText === "Gandalf the Grey") {
-      $(this).text('Gandalf the White');
-      $(this).addClass("the-white");
-    }
+    console.log(this.innerText)
+    if(this.innerText === "gandalf the grey") {
+      console.log("I'm here!!")
+       $(this).text('Gandalf the White');
+       $(this).addClass("the-white");
+    };
   });
 };
 
@@ -258,6 +260,21 @@ const hornOfGondor = () => {
 
   // 3. Tricky: Remove the Uruk-Hai from the Baddies on the page
 
+  alert("The Horn of Gondor has been Blowd!");
+  
+  $('.buddy').each(function() {
+      if(this.innerText === "boromir") {
+          $(this).wrap('<del>');
+       // $(this).style.textDecoration = line-through
+      }
+  });
+    
+  $('.baddy').each(function() {
+    console.log(this.innerText)
+    if(this.innerText === "the uruk-hai") {
+       $(this).remove();
+    }
+  });
 };
 
 // COMMIT YOUR WORK
