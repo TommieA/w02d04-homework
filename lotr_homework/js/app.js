@@ -23,7 +23,7 @@ const buddies = [
 const baddies = [
   "Sauron",
   "Saruman",
-  "The Uruk-hai",
+  "The Uruk-Hai",
   "Orcs"
 ];
 
@@ -60,6 +60,8 @@ const makeMiddleEarth = () => {
 
   //   3d. appends each land to the middle-earth section
 
+console.log("Trying to make middle earth.")
+
   $('body').append(`<section id="middle-earth"></section>`);
  
   for(i = 0; i < lands.length; i++) {
@@ -85,6 +87,8 @@ const makeHobbits = () => {
 
   // hint: get 'The-Shire' by using its id
 
+  console.log("Make Hobbits")
+
   $('#The-Shire').append(`<ul/>`)
 
   for(let i = 0; i < hobbits.length; i++) {
@@ -108,7 +112,7 @@ const keepItSecretKeepItSafe = () => {
 
   // when you think you have given Frodo the ring, check in your Elements tab
   
-  ('<div id="the-ring"><\div>')
+  ('<div id="the-ring"></div>')
 
   $('.hobbits').eq(0).append(`<div id="the-ring"></div>`)
 
@@ -155,6 +159,7 @@ const makeBuddies = () => {
   for(let i = 0; i < buddies.length; i++) {
     $('aside ul').append(`<li class="buddy">${buddies[i]}</li>`)
   }
+console.log("Chapter 5")
 };
 
 
@@ -237,10 +242,11 @@ const theBalrog = () => {
   // 3. in the style.css file, add a css rule to make elements of the class "the-white" have a white background and a grey border
 
   $('.buddy').each(function(){
-    if(this.innerText === "Gandalf the Grey") {
-      $(this).text('Gandalf the White');
-      $(this).addClass("the-white");
-    }
+    console.log(this.innerText)
+    if(this.innerText === "gandalf the grey") {
+       $(this).text('Gandalf the White');
+       $(this).addClass("the-white");
+    };
   });
 };
 
@@ -258,6 +264,20 @@ const hornOfGondor = () => {
 
   // 3. Tricky: Remove the Uruk-Hai from the Baddies on the page
 
+  alert("The Horn of Gondor has been Blowd!");
+  
+  $('.buddy').each(function() {
+      if(this.innerText === "boromir") {
+          $(this).wrap('<del>');
+       // $(this).style.textDecoration = line-through
+      }
+  });
+    
+  $('.baddy').each(function() {
+    if(this.innerText === "the uruk-hai") {
+       $(this).remove();
+    }
+  });
 };
 
 // COMMIT YOUR WORK
@@ -271,6 +291,12 @@ const itsDangerousToGoAlone = () => {
   // 1. take Frodo and Sam out of the fellowship and move them to Mordor (they don't need to be inside a ul in Mordor)
 
   // 2. add a div with an id of 'mount-doom' to Mordor
+  
+
+$(".hobbits").eq(0).appendTo(`#mordor`)
+$(".hobbits").eq(1).appendTo(`#mordor`)
+
+$('#Mordor').append(`<div id="mount-doom"><h1>Mount Doom</h1></div>`);
 
 };
 
@@ -288,6 +314,10 @@ const weWantsIt = () => {
 
   // 3. Move Gollum into Mount Doom
 
+$("#Mordor").append(`<div id="gollum"><h1></h1></div>`)
+$('.hobbits').eq(0).detach("#the-ring")
+$("#the-ring").appendTo(`#gollum`)
+$("#Gollum").appendTo('#mordor')
 };
 
 // COMMIT YOUR WORK
@@ -303,6 +333,10 @@ const thereAndBackAgain = () => {
   // 2. remove all the baddies from the DOM
 
   // 3. Move all the hobbits back to the shire
+
+  $("#Gollum").remove();
+  $('.baddy').remove();
+  $('.hobbits').detach().appendTo('#The-Shire');
 
 };
 
