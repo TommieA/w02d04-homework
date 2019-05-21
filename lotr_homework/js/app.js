@@ -189,17 +189,16 @@ const beautifulStranger = () => {
   // 1. change the buddy 'Strider' textnode to "Aragorn"
 
   // hint: You can get a list of elements by tag name, such as 'aside'
- 
-  //  $("#aside.ul[3]").replaceWith(`<ul class="buddy">Aragorn</ul>`);
+    
+  // $('#aside.buddy[3]').detach().appendTo(`<li class="buddy">Aragorn</li>`);
  
   // Having trouble getting this to Work...
 
-  /*  for(let i = 0; i < "#aside".length; i++) {
-      if("#aside".ul[i] === 'Strider') {
-        console.log(aside.buddy[i])
-         $("buddies[i]").text("Aragorn")
-      }
-    }; */
+  $('.buddy').each(function() { 
+    if(this.innerText === "strider") {
+      $(this).text('Aragorn');
+    }
+  })
 };
 
 // COMMIT YOUR WORK
@@ -218,12 +217,9 @@ const forgeTheFellowShip = () => {
 
   // 4. add the unordered lists of hobbits and buddies to 'the-fellowship'
 
-  $('#middle-earth').append(`<div id="the-fellowship"></div>`);
-  $('#the-fellowship').append(`<h1>The Fellowship</h1>`);
+  $('#middle-earth').append(`<div id="the-fellowship"><h1>The Fellowship</h1></div>`);
   $('#Rivendell ul').detach().appendTo('#the-fellowship');
   $('aside ul').detach().appendTo('#the-fellowship');
-
-  
 };
 
 // COMMIT YOUR WORK
@@ -240,6 +236,12 @@ const theBalrog = () => {
 
   // 3. in the style.css file, add a css rule to make elements of the class "the-white" have a white background and a grey border
 
+  $('.buddy').each(function(){
+    if(this.innerText === "Gandalf the Grey") {
+      $(this).text('Gandalf the White');
+      $(this).addClass("the-white");
+    }
+  });
 };
 
 // COMMIT YOUR WORK
