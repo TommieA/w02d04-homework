@@ -131,7 +131,7 @@ const makeBaddies = () => {
   $('#Mordor').append(`<ul/>`)
 
   for(let i = 0; i < baddies.length; i++) {
-    $('#Mordor').append(`<li class="baddy">${baddies[i]}</li>`)
+    $('#Mordor ul').append(`<li class="baddy">${baddies[i]}</li>`)
   }
 };
 
@@ -149,10 +149,11 @@ const makeBuddies = () => {
 
   // 3. give each of the buddies a class of "buddy"  console.log('Chapter 5')
 
-  $('#middle-earth').append(`<aside/>`)
+  $('#middle-earth').append(`<aside/>`);
+  $('aside').append('<ul/>');
 
   for(let i = 0; i < buddies.length; i++) {
-    $('aside').append(`<ul class="buddy">${buddies[i]}</ul>`)
+    $('aside ul').append(`<li class="buddy">${buddies[i]}</li>`)
   }
 };
 
@@ -217,8 +218,17 @@ const forgeTheFellowShip = () => {
 
   // 4. add the unordered lists of hobbits and buddies to 'the-fellowship'
 
+<<<<<<< HEAD
 
 
+=======
+  $('#middle-earth').append(`<div id="the-fellowship"></div>`);
+  $('#the-fellowship').append(`<h1>The Fellowship</h1>`);
+  $('#Rivendell ul').detach().appendTo('#the-fellowship');
+  $('aside ul').detach().appendTo('#the-fellowship');
+
+  
+>>>>>>> chapter8
 };
 
 // COMMIT YOUR WORK
