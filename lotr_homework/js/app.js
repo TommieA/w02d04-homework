@@ -293,8 +293,8 @@ const itsDangerousToGoAlone = () => {
   // 2. add a div with an id of 'mount-doom' to Mordor
   
 
-$(".hobbits").eq(0).appendTo(`#mordor`)
-$(".hobbits").eq(1).appendTo(`#mordor`)
+$(".hobbits").eq(0).appendTo(`#Mordor`)
+$(".hobbits").eq(1).appendTo(`#Mordor`)
 
 $('#Mordor').append(`<div id="mount-doom"><h1>Mount Doom</h1></div>`);
 
@@ -314,10 +314,10 @@ const weWantsIt = () => {
 
   // 3. Move Gollum into Mount Doom
 
-$("#Mordor").append(`<div id="gollum"><h1></h1></div>`)
+$("#Mordor").append(`<div id="Gollum"><h1></h1></div>`)
 $('.hobbits').eq(0).detach("#the-ring")
-$("#the-ring").appendTo(`#gollum`)
-$("#Gollum").appendTo('#mordor')
+$("#the-ring").appendTo(`#Gollum`)
+$("#Gollum").appendTo('#Mordor')
 };
 
 // COMMIT YOUR WORK
